@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription à la Formation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1 style="color: blueviolet;">Formulaire d'Inscription à la Formation Dev Web du programme D-CLIC</h1>
+        <p style="color: black;">FORMEZ-VOUS AU NUMÉRIQUE AVEC L'OIF</p>
+        
+        <form id="registrationForm">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required><br>
+
+            <label for="prenoms">Prénoms:</label>
+            <input type="text" id="prenoms" name="prenoms" required><br>
+
+            <label for="date_naissance">Date de naissance:</label>
+            <input type="date" id="date_naissance" name="date_naissance" required><br>
+
+            <label for="tel">Numéro de téléphone:</label>
+            <input type="tel" id="tel" name="tel" required><br>
+
+            <label for="motivation">Motivation (1000 à 2500 caractères):</label><br>
+            <textarea id="motivation" name="motivation" rows="4" required></textarea><br>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+
+    <div class="section-success" id="successSection">
+        <h2>Inscription réussie !</h2>
+        <p><strong>Nom:</strong> <span id="displayNom"></span></p>
+        <p><strong>Prénoms:</strong> <span id="displayPrenoms"></span></p>
+        <p><strong>Date de naissance:</strong> <span id="displayDateNaissance"></span></p>
+        <p><strong>Numéro de téléphone:</strong> <span id="displayTel"></span></p>
+        <p><strong>Motivation:</strong> <span id="displayMotivation"></span></p>
+    </div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
