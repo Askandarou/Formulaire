@@ -9,39 +9,47 @@
 <body>
 
     <div class="form-container">
-        <h1 style="color: blueviolet;">Formulaire d'Inscription à la Formation Dev Web du programme D-CLIC</h1>
-        <p style="color: black;">FORMEZ-VOUS AU NUMÉRIQUE AVEC L'OIF</p>
-        
-        <form id="registrationForm">
-            <label for="nom">Nom:</label>
-            <input type="text" id="nom" name="nom" required><br>
+        <h1 class="title">Formulaire d'Inscription à la Formation Dev Web du programme D-CLIC</h1>
+        <p class="subtitle">FORMEZ-VOUS AU NUMÉRIQUE AVEC L'OIF</p>
+        <p><strong>D-CLIC, inscrivez-vous et formez-vous au numérique avec l'OIF.</strong></p>
+        <form id="registrationForm"  action="" >
+            <fieldset>
+                <legend>Informations personnelles d'utilisateur</legend>
 
-            <label for="prenoms">Prénoms:</label>
-            <input type="text" id="prenoms" name="prenoms" required><br>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required placeholder="Ex: Dupont">
 
-            <label for="date_naissance">Date de naissance:</label>
-            <input type="date" id="date_naissance" name="date_naissance" required><br>
+                <label for="prenoms">Prénoms :</label>
+                <input type="text" id="prenoms" name="prenoms" required placeholder="Ex: Jean-Marc">
 
-            <label for="tel">Numéro de téléphone:</label>
-            <input type="tel" id="tel" name="tel" required><br>
+                <label for="date_naissance">Date de naissance :</label>
+                <input type="date" id="dateNaissance" name="date_naissance" required>
 
-            <label for="motivation">Motivation (1000 à 2500 caractères):</label><br>
-            <textarea id="motivation" name="motivation" rows="4" required></textarea><br>
+                <label for="tel">Numéro de téléphone :</label>
+                <input type="tel" id="tel" name="tel" required placeholder="Ex: 0123456789" pattern="01[0-9]{8}" maxlength="10">
+            </fieldset>
 
-            <button type="submit">S'inscrire</button>
+            <fieldset>
+                <legend>Motivation</legend>
+
+                <label for="motivation">Expliquez votre motivation (1000 à 2500 caractères) :</label>
+                <textarea id="motivation" name="motivation" rows="8" required minlength="1000" maxlength="2500"></textarea>
+            </fieldset>
+
+            <button type="submit" id="btn">S'inscrire</button>
         </form>
     </div>
 
-    <div class="section-success" id="successSection">
-        <h2>Inscription réussie !</h2>
-        <p><strong>Nom:</strong> <span id="displayNom"></span></p>
-        <p><strong>Prénoms:</strong> <span id="displayPrenoms"></span></p>
-        <p><strong>Date de naissance:</strong> <span id="displayDateNaissance"></span></p>
-        <p><strong>Numéro de téléphone:</strong> <span id="displayTel"></span></p>
-        <p><strong>Motivation:</strong> <span id="displayMotivation"></span></p>
+    <div class="section-success hidden" id="successSection">
+        <h2>🎉 Inscription réussie !</h2>
+        <p><strong>Nom :</strong> <span id="displayNom"></span></p>
+        <p><strong>Prénoms :</strong> <span id="displayPrenoms"></span></p>
+        <p><strong>Date de naissance :</strong> <span id="displayDateNaissance"></span></p>
+        <p><strong>Numéro de téléphone :</strong> <span id="displayTel"></span></p>
+        <p><strong>Motivation :</strong> <span id="displayMotivation"></span></p>
     </div>
 
-    <script src="script.js" defer></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
