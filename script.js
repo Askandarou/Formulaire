@@ -1,16 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Le script est bien chargé !"); 
+    // Vérifier si le script fonctionne
+
     const form = document.getElementById("registrationForm");
-    const successSection = document.getElementById("successSection")});
+    const successSection = document.getElementById("successSection");
+
+    if (!form) {
+        console.error("Le formulaire n'a pas été trouvé !");
+        return;
+    }
+
+    if (!successSection) {
+        console.error("La section de succès n'a pas été trouvée !");
+        return;
+    }
 
     successSection.style.display = "none"; // Cacher la section de succès au départ
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault()}); // Empêcher l'envoi du formulaire
+        event.preventDefault();
+        console.log("Soumission du formulaire...");
 
         // Récupération des valeurs du formulaire
         let nom = document.getElementById("nom").value.trim();
         let prenoms = document.getElementById("prenoms").value.trim();
-        let dateNaissance = document.getElementById("date_naissance").value;
+        let dateNaissance = document.getElementById("dateNaissance").value;
         let tel = document.getElementById("tel").value.trim();
         let motivation = document.getElementById("motivation").value.trim();
 
@@ -48,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Affichage des informations saisies
+        console.log("Validation réussie, affichage des informations...");
+
+        // Affichage des informations saisies par l'utlisateur
         document.getElementById("displayNom").textContent = nom;
         document.getElementById("displayPrenoms").textContent = prenoms;
         document.getElementById("displayDateNaissance").textContent = dateNaissance;
@@ -56,7 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("displayMotivation").textContent = motivation;
 
         // Afficher la section de succès
-        successSection.style.display = "block" 
-        '})';
+        successSection.style.display = "block";
 
-        // Réinitialiser le formulaire après
+        // Réinitialiser le formulaire après inscription réussie
+        form.reset();
+    });
+});
